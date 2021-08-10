@@ -1,2 +1,5 @@
 inherit_gem:
   relaxed-rubocop: .rubocop.yml
+
+Lint/MissingSuper:
+  Enabled: false
