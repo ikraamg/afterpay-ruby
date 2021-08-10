@@ -31,4 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec',              '~> 3.0'
   spec.add_development_dependency 'webmock',            '~> 2.1'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.4.1'
+  spec.add_development_dependency 'rubocop',            '~> 1.18', '>= 1.18.4'
+  spec.add_development_dependency 'relaxed-rubocop',    '~> 2.5'
 end
