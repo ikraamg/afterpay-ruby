@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'afterpay/callable'
 require 'afterpay/error_handler'
 require 'afterpay/http_service'
@@ -15,8 +17,8 @@ module Afterpay
 
       def response
         @response ||= ::Afterpay::HTTPService::Response.new(
-          status:  raw_response.status.to_i,
-          body:    raw_response.body,
+          status: raw_response.status.to_i,
+          body: raw_response.body,
           headers: raw_response.headers
         )
       end

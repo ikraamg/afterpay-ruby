@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :order, class: Afterpay::Components::Order do
     payment_type       { 'PAY_BY_INSTALLMENT' }

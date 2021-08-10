@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'afterpay/initializable'
 require 'afterpay/representable'
 

@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Afterpay::API::Configuration::Retrieve do
   describe '#call' do
     let(:type)           { 'PAY_BY_INSTALLMENT' }
     let(:minimum_amount) { build(:money) }
-    let(:maximum_amount) { build(:money)}
+    let(:maximum_amount) { build(:money) }
     let(:raw_response)   do
       JSON.generate([{
-        type: type,
-        minimumAmount: minimum_amount,
-        maximumAmount: maximum_amount
-      }])
+                      type: type,
+                      minimumAmount: minimum_amount,
+                      maximumAmount: maximum_amount
+                    }])
     end
 
     before(:each) do
-      stub_request(:get, /api.us.afterpay.com\/v2\/configuration/)
+      stub_request(:get, %r{api.us.afterpay.com/v2/configuration})
         .to_return(
           status: 200,
           body: raw_response,

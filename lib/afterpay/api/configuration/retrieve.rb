@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Afterpay
   module API
     module Configuration
@@ -6,7 +8,7 @@ module Afterpay
 
         def payload
           {
-            action:   :get,
+            action: :get,
             endpoint: endpoint
           }
         end
