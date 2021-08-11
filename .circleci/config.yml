@@ -1,0 +1,21 @@
+jobs:
+  build:
+    docker:
+      - image: 'cimg/ruby:2.7'
+    environment:
+      RAILS_ENV: test
+    steps:
+      - checkout
+      - run:
+          name: 'Generate Gemfile.lock'
+          command: bundle lock
+          when: always
+      - ruby/install-deps
+      - ruby/rspec-test
+orbs:
+  ruby: circleci/ruby@1.1.4
+version: 2.1
+workflows:
+  build_and_test:
+    jobs:
+      - build
