@@ -26,11 +26,6 @@ module Afterpay
       # Shipping Courier details.
       attr_accessor :courier
 
-      # @attribute description
-      # @return [String]
-      # A description of the order.
-      attr_accessor :description
-
       # @attribute items
       # @return [Array<Afterpay::Components::Item>]
       # An array of order items.
