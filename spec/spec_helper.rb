@@ -6,6 +6,7 @@ require 'webmock/rspec'
 require 'json'
 require 'faker'
 require 'factory_bot'
+require 'code_coverage'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
