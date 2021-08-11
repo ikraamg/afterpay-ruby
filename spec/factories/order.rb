@@ -5,7 +5,7 @@ FactoryBot.define do
     description        { Faker::Lorem.sentence }
     merchant_reference { Faker::Lorem.characters(5) }
 
-    total_amount       { build(:money) }
+    amount             { build(:money) }
     tax_amount         { build(:money) }
     shipping_amount    { build(:money) }
     consumer           { build(:consumer) }

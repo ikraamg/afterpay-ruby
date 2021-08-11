@@ -1,10 +1,10 @@
 module Afterpay
   module Components
     class Order < Base
-      # @attribute total_amount
+      # @attribute amount
       # @return [Afterpay::Components::Money]
       # Total amount for order to be charged to consumer.
-      attr_accessor :total_amount
+      attr_accessor :amount
 
       # @attribute consumer
       # @return [Afterpay::Components::Consumer]
