@@ -9,7 +9,7 @@ describe Afterpay::API::Payment::Capture do
       let(:raw_response) { JSON.generate(id: '123') }
 
       before(:each) do
-        stub_request(:post, /api.us.afterpay.com\/v1\/payments/)
+        stub_request(:post, /api.us.afterpay.com\/v2\/payments/)
           .to_return(
             status: 201,
             body: raw_response,
@@ -38,7 +38,7 @@ describe Afterpay::API::Payment::Capture do
       end
 
       before(:each) do
-        stub_request(:post, /api.us.afterpay.com\/v1\/payments/)
+        stub_request(:post, /api.us.afterpay.com\/v2\/payments/)
           .to_return(
             status: 422,
             body: raw_response,

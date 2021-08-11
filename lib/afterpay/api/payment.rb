@@ -1,7 +1,7 @@
 module Afterpay
   module API
     module Payment
-      URL = 'v1/payments'.freeze
+      URL = 'v2/payments'.freeze
     end
   end
 end
