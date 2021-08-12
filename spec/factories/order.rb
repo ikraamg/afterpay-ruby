@@ -2,10 +2,9 @@ FactoryBot.define do
   factory :order, class: Afterpay::Components::Order do
     payment_type       { 'PAY_BY_INSTALLMENT' }
 
-    description        { Faker::Lorem.sentence }
     merchant_reference { Faker::Lorem.characters(5) }
 
-    total_amount       { build(:money) }
+    amount             { build(:money) }
     tax_amount         { build(:money) }
     shipping_amount    { build(:money) }
     consumer           { build(:consumer) }

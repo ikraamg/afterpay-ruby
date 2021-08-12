@@ -14,7 +14,7 @@ describe Afterpay::API::Configuration::Retrieve do
     end
 
     before(:each) do
-      stub_request(:get, /api.us.afterpay.com\/v1\/configuration/)
+      stub_request(:get, /api.us.afterpay.com\/v2\/configuration/)
         .to_return(
           status: 200,
           body: raw_response,

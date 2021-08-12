@@ -1,6 +1,6 @@
 # Ruby SDK for the Afterpay API
 
-[Afterpay API documentation](https://docs.afterpay.com/us-online-api-v1.html#afterpay-online-us-api-v1)
+[Afterpay API documentation](https://developers.afterpay.com/afterpay-online/reference)
 
 ## Installation
 
@@ -38,7 +38,7 @@ end
 configuration = Afterpay::API::Configuration::Retrieve.call
 
 # Creating an order based on different components
-total_amount = Afterpay::Components::Money.new(
+amount = Afterpay::Components::Money.new(
   amount:   '10.00',
   currency: 'USD'
 )
@@ -56,9 +56,9 @@ merchant = Afterpay::Components::Merchant.new(
 )
 
 order = Afterpay::Components::Order.new(
-  total_amount: total_amount,
-  consumer:     consumer,
-  merchant:     merchant
+  amount:   amount,
+  consumer: consumer,
+  merchant: merchant
 )
 
 Afterpay::API::Order::Create.call(
@@ -72,7 +72,7 @@ payment = Afterpay::Components::Payment.new(
 
 Afterpay::API::Payment::Capture.call(
   payment: payment
-) # => <Hashie::Mash created="2018-10-06T18:45:00.819Z" events=#<Hashie::Array []> id="afterpay_order_id" ... status="APPROVED" token="some_token" totalAmount=#<Hashie::Mash amount="10.00" currency="USD">>
+) # => <Hashie::Mash created="2018-10-06T18:45:00.819Z" events=#<Hashie::Array []> id="afterpay_order_id" ... status="APPROVED" token="some_token" originalAmount=#<Hashie::Mash amount="10.00" currency="USD">>
 
 # Returned unique Afterpay's Order ID can be used to make a refund
 refund_amount = Afterpay::Components::Money.new(

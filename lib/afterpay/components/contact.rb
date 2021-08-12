@@ -16,15 +16,20 @@ module Afterpay
       # Second line of the address. Maximum length is 128 characters.
       attr_accessor :line2
 
-      # @attribute suburb
+      # @attribute area1
       # @return [String]
-      # City or suburb name. Maximum length is 128 characters.
-      attr_accessor :suburb
+      # City or suburb. Maximum length is 128 characters.
+      attr_accessor :area1
 
-      # @attribute state
+      # @attribute area2
       # @return [String]
-      # State. Maximum length is 128 characters.
-      attr_accessor :state
+      # Suburb or village or local area. Maximum length is 128 characters.
+      attr_accessor :area2
+
+      # @attribute region
+      # @return [String]
+      # Region or state name. Maximum length is 128 characters.
+      attr_accessor :region
 
       # @attribute postcode
       # @return [String]
