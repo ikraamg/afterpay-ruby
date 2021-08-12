@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require 'faraday_middleware'
 
@@ -8,7 +10,7 @@ module Afterpay
       def configuration
         {
           middleware: DEFAULT_MIDDLEWARE,
-          server:     ::Afterpay.server
+          server: ::Afterpay.server
         }
       end
     end
@@ -17,7 +19,7 @@ module Afterpay
     DEFAULT_MIDDLEWARE = proc do |builder|
       builder.request    :json
 
-      builder.basic_auth *::Afterpay.configuration.values
+      builder.basic_auth(*::Afterpay.configuration.values)
 
       builder.response   :mashify
       builder.response   :json, content_type: /\bjson$/

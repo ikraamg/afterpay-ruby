@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Afterpay
   module API
     module Payment
@@ -13,8 +15,8 @@ module Afterpay
 
         def payload
           {
-            action:   :post,
-            body:     refund.as_json,
+            action: :post,
+            body: refund.as_json,
             endpoint: endpoint
           }
         end

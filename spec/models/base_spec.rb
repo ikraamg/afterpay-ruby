@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Afterpay::Components::Base do
@@ -31,7 +33,7 @@ describe Afterpay::Components::Base do
       it 'returns valid json representation of instance variables and encapsulated object' do
         allow(test_object).to receive(:is_a?).with(Afterpay::Components::Base).and_return(true)
         allow(test_object).to receive(:to_json).and_return("{\"test_variable\":\"test_value\"}")
-        allow(test_object).to receive(:as_json).and_return({"test_variable": "test_value"})
+        allow(test_object).to receive(:as_json).and_return({ "test_variable": "test_value" })
 
         expect(subject.to_json).to eq expected
       end

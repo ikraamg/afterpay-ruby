@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Afterpay::API::Payment::Refund do
@@ -6,12 +8,12 @@ describe Afterpay::API::Payment::Refund do
 
     context 'with proper params' do
       let(:amount)       { build(:money) }
-      let(:refund)       { build(:refund, amount: amount)}
+      let(:refund)       { build(:refund, amount: amount) }
       let(:refund_id)    { '321' }
       let(:raw_response) { JSON.generate(refundId: refund_id) }
 
       before(:each) do
-        stub_request(:post, /api.us.afterpay.com\/v2\/payments\/123\/refund/)
+        stub_request(:post, %r{api.us.afterpay.com/v2/payments/123/refund})
           .to_return(
             status: 201,
             body: raw_response,
@@ -42,7 +44,7 @@ describe Afterpay::API::Payment::Refund do
       end
 
       before(:each) do
-        stub_request(:post, /api.us.afterpay.com\/v2\/payments\/123\/refund/)
+        stub_request(:post, %r{api.us.afterpay.com/v2/payments/123/refund})
           .to_return(
             status: 422,
             body: raw_response,

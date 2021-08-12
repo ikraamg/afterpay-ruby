@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Afterpay do
   it 'has a version number' do
     expect(Afterpay::VERSION).not_to be nil

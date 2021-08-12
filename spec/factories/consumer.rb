@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :consumer, class: Afterpay::Components::Consumer do
     phone_number { Faker::PhoneNumber.cell_phone }

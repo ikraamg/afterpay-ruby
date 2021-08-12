@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'afterpay/api/base'
 require 'afterpay/api/configuration'
 require 'afterpay/api/configuration/retrieve'
@@ -41,7 +43,7 @@ module Afterpay
     def configuration
       {
         merchant_id: @merchant_id,
-        secret_key:  @secret_key
+        secret_key: @secret_key
       }
     end
 
@@ -51,5 +53,5 @@ module Afterpay
     end
   end
 
-  DEFAULT_SERVER = 'https://api.us.afterpay.com/'.freeze
+  DEFAULT_SERVER = 'https://api.us.afterpay.com/'
 end

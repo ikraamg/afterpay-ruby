@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 
 module Afterpay
@@ -23,7 +25,7 @@ module Afterpay
       # @param  [Hash] params hash of parameters.
       # @return [Farday::Response] Faraday::Response instance
       def perform(params = {})
-        adapter.send *params.values_at(:action, :endpoint, :body)
+        adapter.send(*params.values_at(:action, :endpoint, :body))
       end
 
       private

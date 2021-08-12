@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :merchant, class: Afterpay::Components::Merchant do
     redirect_confirm_url { Faker::Internet.url }

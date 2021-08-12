@@ -11,6 +11,9 @@ jobs:
           command: bundle lock
           when: always
       - ruby/install-deps
+      - ruby/rubocop-check:
+          format: progress
+          label: Inspecting with Rubocop
       - ruby/rspec-test
 orbs:
   ruby: circleci/ruby@1.1.4

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Afterpay
   class Callable
     def self.call(*args)

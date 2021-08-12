@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :item, class: Afterpay::Components::Item do
     name     { Faker::Lorem.word }

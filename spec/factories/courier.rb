@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :courier, class: Afterpay::Components::Courier do
     priority   { 'STANDARD' }
