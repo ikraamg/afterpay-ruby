@@ -1,5 +1,8 @@
 # Ruby SDK for the Afterpay API
 
+[![CircleCI](https://circleci.com/gh/nebulab/afterpay-ruby.svg?style=shield)](https://circleci.com/gh/nebulab/afterpay-ruby)
+[![codecov](https://codecov.io/gh/nebulab/afterpay-ruby/branch/main/graph/badge.svg)](https://codecov.io/gh/nebulab/afterpay-ruby)
+
 [Afterpay API documentation](https://developers.afterpay.com/afterpay-online/reference)
 
 ## Installation

@@ -4,11 +4,9 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'afterpay'
 require 'webmock/rspec'
 require 'json'
-require 'coveralls'
 require 'faker'
 require 'factory_bot'
-
-Coveralls.wear!
+require 'code_coverage'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
