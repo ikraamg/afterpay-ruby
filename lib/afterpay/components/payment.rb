@@ -12,6 +12,11 @@ module Afterpay
       # @return [String]
       # The merchant's order id / reference that this payment corresponds to
       attr_accessor :merchant_reference
+
+      # @attribute amount
+      # @return [Afterpay::Components::Money]
+      # The refund amount.
+      attr_accessor :amount
     end
   end
 end
