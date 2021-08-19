@@ -7,7 +7,8 @@ describe Afterpay::API::Configuration::Retrieve do
     let(:type)           { 'PAY_BY_INSTALLMENT' }
     let(:minimum_amount) { build(:money) }
     let(:maximum_amount) { build(:money) }
-    let(:raw_response)   do
+    let(:user_agent) { "user_agent" }
+    let(:raw_response) do
       JSON.generate([{
                       type: type,
                       minimumAmount: minimum_amount,
@@ -16,12 +17,21 @@ describe Afterpay::API::Configuration::Retrieve do
     end
 
     before(:each) do
+      ::Afterpay.configure do |c|
+        c.user_agent = user_agent
+      end
+
       stub_request(:get, %r{api.us.afterpay.com/v2/configuration})
         .to_return(
           status: 200,
           body: raw_response,
           headers: { 'Content-Type' => 'application/json' }
         )
+    end
+
+    it 'makes request with the correct headers with the user_agent' do
+      expect(described_class.call).to have_requested(:get, "https://api.us.afterpay.com/v2/configuration").
+        with(headers: { "User-Agent" => user_agent })
     end
 
     it 'returns a list of payment configuration' do
