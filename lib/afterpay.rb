@@ -37,6 +37,11 @@ module Afterpay
     # @!attribute server
     attr_writer :server
 
+    # @!attribute user_agent
+    # @return [String] A User-Agent header must be supplied with all Merchant API requests prior to placing any live transactions.
+    # Create your User-Agent string here... https://developers.afterpay.com/afterpay-online/docs/user-agent-header-1
+    attr_accessor :user_agent
+
     # @yield [self] to accept configuration settings
     def configure
       yield self
