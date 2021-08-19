@@ -33,7 +33,13 @@ module Afterpay
       # Creates memoized Faraday::Connection instance
       # @return [Faraday::Connection] Faraday::Connection instance
       def adapter
-        @adapter ||= Faraday.new(server, {}, &middleware)
+        @adapter ||= Faraday.new(server, faraday_options, &middleware)
+      end
+
+      def faraday_options
+        return {} unless ::Afterpay.user_agent
+
+        { "headers" => { "User-Agent" => ::Afterpay.user_agent } }
       end
     end
   end
