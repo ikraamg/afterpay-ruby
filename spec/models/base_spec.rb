@@ -32,9 +32,27 @@ describe Afterpay::Components::Base do
 
       it 'returns valid json representation of instance variables and encapsulated object' do
         allow(test_object).to receive(:is_a?).with(Afterpay::Components::Base).and_return(true)
+        allow(test_object).to receive(:is_a?).with(Array).and_return(false)
         allow(test_object).to receive(:to_json).and_return("{\"test_variable\":\"test_value\"}")
         allow(test_object).to receive(:as_json).and_return({ "test_variable": "test_value" })
 
+        expect(subject.to_json).to eq expected
+      end
+    end
+
+    context 'with instance variables and encapsulated array of objects' do
+      let(:expected) do
+        '{"foo":"bar","testArray":[{"testVariable":"test_value"}]}'
+      end
+      let(:test_object) { Afterpay::Components::Base.new }
+
+      before(:each) do
+        test_object.instance_variable_set(:@test_variable, 'test_value')
+        subject.instance_variable_set(:@foo, 'bar')
+        subject.instance_variable_set(:@test_array, [test_object])
+      end
+
+      it 'returns valid json representation of instance variables and encapsulated array of objects' do
         expect(subject.to_json).to eq expected
       end
     end
