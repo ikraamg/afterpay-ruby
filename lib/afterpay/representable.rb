@@ -22,7 +22,11 @@ module Afterpay
     end
 
     def represent(value)
-      non_primitive?(value) ? value.as_json : value
+      return value.as_json if non_primitive?(value)
+
+      return value.map { |item| represent(item) } if value.is_a?(Array)
+
+      value
     end
 
     def non_primitive?(value)
