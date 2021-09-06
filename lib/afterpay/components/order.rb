@@ -62,6 +62,11 @@ module Afterpay
       # @return [Afterpay::Components::Money]
       # The shipping amount.
       attr_accessor :shipping_amount
+
+      # @attribute mode
+      # @return [String]
+      # Set to `express` for an express-flow checkout.
+      attr_accessor :mode
     end
   end
 end
