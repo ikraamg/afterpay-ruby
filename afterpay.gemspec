@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency     'faraday',            '~> 1.0'
   spec.add_runtime_dependency     'faraday_middleware', '~> 1.0'
-  spec.add_runtime_dependency     'hashie',             '~> 3.6', '>= 3.6.0'
+  spec.add_runtime_dependency     'hashie',             '~> 4.0'
 
   spec.add_development_dependency 'bundler',            '~> 2.2.22'
   spec.add_development_dependency 'codecov',            '~> 0.5.2'
