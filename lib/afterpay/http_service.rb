@@ -18,8 +18,7 @@ module Afterpay
     # Afterpay default middleware stack
     DEFAULT_MIDDLEWARE = proc do |builder|
       builder.request    :json
-
-      builder.basic_auth(*::Afterpay.configuration.values)
+      builder.request    :basic_auth, *::Afterpay.configuration.values
 
       builder.response   :mashify
       builder.response   :json, content_type: /\bjson$/

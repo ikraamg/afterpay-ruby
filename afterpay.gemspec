@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = %w[lib]
 
-  spec.add_runtime_dependency     'faraday',            '~> 0.15', '>= 0.15.3'
-  spec.add_runtime_dependency     'faraday_middleware', '~> 0.12', '>= 0.12.2'
+  spec.add_runtime_dependency     'faraday',            '~> 1.0'
+  spec.add_runtime_dependency     'faraday_middleware', '~> 1.0'
   spec.add_runtime_dependency     'hashie',             '~> 3.6',  '>= 3.6.0'
 
   spec.add_development_dependency 'bundler',            '~> 2.2.22'
