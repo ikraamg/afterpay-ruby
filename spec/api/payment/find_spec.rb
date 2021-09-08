@@ -10,7 +10,7 @@ describe Afterpay::API::Payment::Find do
       let(:raw_response) { JSON.generate(paymentState: 'VOIDED') }
 
       before(:each) do
-        stub_request(:get, %r{api.us.afterpay.com/v2/payments/#{order_id}})
+        stub_request(:get, %r{global-api.afterpay.com/v2/payments/#{order_id}})
           .to_return(
             status: 201,
             body: raw_response,
@@ -40,7 +40,7 @@ describe Afterpay::API::Payment::Find do
       end
 
       before(:each) do
-        stub_request(:get, %r{api.us.afterpay.com/v2/payments/#{order_id}})
+        stub_request(:get, %r{global-api.afterpay.com/v2/payments/#{order_id}})
           .to_return(
             status: 404,
             body: raw_response,

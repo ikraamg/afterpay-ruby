@@ -13,7 +13,7 @@ describe Afterpay::API::Payment::Refund do
       let(:raw_response) { JSON.generate(refundId: refund_id) }
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/123/refund})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/123/refund})
           .to_return(
             status: 201,
             body: raw_response,
@@ -44,7 +44,7 @@ describe Afterpay::API::Payment::Refund do
       end
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/123/refund})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/123/refund})
           .to_return(
             status: 422,
             body: raw_response,

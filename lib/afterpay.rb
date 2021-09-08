@@ -62,5 +62,5 @@ module Afterpay
     end
   end
 
-  DEFAULT_SERVER = 'https://api.us.afterpay.com/'
+  DEFAULT_SERVER = 'https://global-api.afterpay.com/'
 end
