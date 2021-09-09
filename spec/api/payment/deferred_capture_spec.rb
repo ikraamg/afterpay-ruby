@@ -12,7 +12,7 @@ describe Afterpay::API::Payment::DeferredCapture do
       let(:raw_response) { JSON.generate(paymentState: 'PARTIALLY_CAPTURED') }
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/#{order_id}/capture})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/#{order_id}/capture})
           .to_return(
             status: 201,
             body: raw_response,
@@ -42,7 +42,7 @@ describe Afterpay::API::Payment::DeferredCapture do
       end
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/#{order_id}/capture})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/#{order_id}/capture})
           .to_return(
             status: 412,
             body: raw_response,
@@ -71,7 +71,7 @@ describe Afterpay::API::Payment::DeferredCapture do
       end
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments//capture})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments//capture})
           .to_return(
             status: 404,
             body: raw_response,

@@ -30,7 +30,7 @@ Merchant ID and Secret Key are required to work with Afterpay API
 Afterpay.configure do |c|
   c.merchant_id = 'your_merchant_id'
   c.secret_key  = 'your_secret_key'
-  c.server      = 'us_or_au_server' # Default is 'https://api.us.afterpay.com/'
+  c.server      = 'us_or_au_server' # Default is 'https://global-api.afterpay.com/'
   c.user_agent  = 'MyAfterpayModule/1.0.0 (E-Commerce Platform Name/1.0.0; PHP/7.0.0; Merchant/600032000) https://merchant.example.com' # Default is nil
 end
 ```

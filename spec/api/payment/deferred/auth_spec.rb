@@ -11,7 +11,7 @@ describe Afterpay::API::Payment::Auth do
       let(:raw_response) { JSON.generate(status: "APPROVED", paymentState: "AUTH_APPROVED") }
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/auth})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/auth})
           .to_return(
             status: 201,
             body: raw_response,
@@ -40,7 +40,7 @@ describe Afterpay::API::Payment::Auth do
       end
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/auth})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/auth})
           .to_return(
             status: 402,
             body: raw_response,

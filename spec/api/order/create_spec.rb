@@ -12,7 +12,7 @@ describe Afterpay::API::Order::Create do
       let(:raw_response) { JSON.generate(token: token, expires: expires) }
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/checkouts})
+        stub_request(:post, %r{global-api.afterpay.com/v2/checkouts})
           .to_return(
             status: 201,
             body: raw_response,
@@ -41,7 +41,7 @@ describe Afterpay::API::Order::Create do
       end
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/checkouts})
+        stub_request(:post, %r{global-api.afterpay.com/v2/checkouts})
           .to_return(
             status: 422,
             body: raw_response,

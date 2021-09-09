@@ -12,7 +12,7 @@ describe Afterpay::API::Payment::Void do
       let(:raw_response) { JSON.generate(paymentState: 'VOIDED') }
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/#{order_id}/void})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/#{order_id}/void})
           .to_return(
             status: 201,
             body: raw_response,
@@ -42,7 +42,7 @@ describe Afterpay::API::Payment::Void do
       end
 
       before(:each) do
-        stub_request(:post, %r{api.us.afterpay.com/v2/payments/#{order_id}/void})
+        stub_request(:post, %r{global-api.afterpay.com/v2/payments/#{order_id}/void})
           .to_return(
             status: 404,
             body: raw_response,
