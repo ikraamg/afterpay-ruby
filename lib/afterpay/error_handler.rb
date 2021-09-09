@@ -11,11 +11,15 @@ module Afterpay
       def inspect(response)
         return response if response.ok?
 
-        raise ERRORS[response.status], response_message(response)
+        raise ERRORS[response.status].new(response_error_code(response)), response_message(response)
       end
 
       def response_message(response)
         response.body.is_a?(String) ? JSON.parse(response.body)['message'] : response.message
+      end
+
+      def response_error_code(response)
+        response.body.is_a?(String) ? JSON.parse(response.body)['errorCode'] : response.body.errorCode
       end
 
       ERRORS = {

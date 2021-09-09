@@ -1,7 +1,14 @@
 # frozen_string_literal: true
 
 module Afterpay
-  class BaseError                 < StandardError; end
+  class BaseError < StandardError
+    attr_accessor :error_code
+
+    def initialize(error_code)
+      super
+      @error_code = error_code
+    end
+  end
 
   class BadRequestError           < BaseError;     end
 
