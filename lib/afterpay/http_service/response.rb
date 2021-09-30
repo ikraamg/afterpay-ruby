@@ -27,7 +27,7 @@ module Afterpay
       end
 
       def ok?
-        (200..201).cover?(status.to_i)
+        (200..204).cover?(status.to_i)
       end
     end
   end
