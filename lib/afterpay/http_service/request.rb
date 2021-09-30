@@ -37,9 +37,11 @@ module Afterpay
       end
 
       def faraday_options
-        return {} unless ::Afterpay.user_agent
+        { "headers" => headers }
+      end
 
-        { "headers" => { "User-Agent" => ::Afterpay.user_agent } }
+      def headers
+        { 'Content-Type' => 'application/json', 'User-Agent' => ::Afterpay.user_agent }.compact
       end
     end
   end
