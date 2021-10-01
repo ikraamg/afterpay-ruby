@@ -43,6 +43,11 @@ module Afterpay
       # @return [String]
       # The estimated date when the order will be shipped, in YYYY-MM or YYYY-MM-DD format
       attr_accessor :estimated_shipment_date
+
+      # @attribute preorder
+      # @return boolean
+      # Should return false when the estimated_shipment_date is already passed otherwise true
+      attr_accessor :preorder
     end
   end
 end
