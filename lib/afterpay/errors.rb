@@ -22,6 +22,8 @@ module Afterpay
 
   class NotAcceptableError        < BaseError;     end
 
+  class RequestTimeoutError       < BaseError;     end
+
   class ConflictError             < BaseError;     end
 
   class GoneError                 < BaseError;     end
