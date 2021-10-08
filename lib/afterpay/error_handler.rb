@@ -29,13 +29,15 @@ module Afterpay
         404 => NotFoundError,
         405 => MethodNotAllowedError,
         406 => NotAcceptableError,
+        408 => RequestTimeoutError,
         409 => ConflictError,
         410 => GoneError,
         412 => PreconditionFailedError,
         422 => UnprocessableEntityError,
         429 => TooManyRequestsError,
         500 => InternalServerError,
-        503 => ServiceUnavailableError
+        503 => ServiceUnavailableError,
+        504 => GatewayTimeoutError
       }.freeze
     end
   end

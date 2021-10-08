@@ -22,6 +22,8 @@ module Afterpay
 
   class NotAcceptableError        < BaseError;     end
 
+  class RequestTimeoutError       < BaseError;     end
+
   class ConflictError             < BaseError;     end
 
   class GoneError                 < BaseError;     end
@@ -35,4 +37,6 @@ module Afterpay
   class InternalServerError       < BaseError;     end
 
   class ServiceUnavailableError   < BaseError;     end
+
+  class GatewayTimeoutError       < BaseError;     end
 end
