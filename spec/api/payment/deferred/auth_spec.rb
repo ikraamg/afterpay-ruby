@@ -56,5 +56,17 @@ describe Afterpay::API::Payment::Auth do
         expect { described_class.call(payment: payment) }.to raise_error error_message
       end
     end
+
+    context 'when receiving a timeout error' do
+      before do
+        request = instance_double(::Afterpay::HTTPService::Request)
+        allow(request).to receive(:perform).and_raise(::Faraday::TimeoutError)
+        allow(::Afterpay::HTTPService::Request).to receive(:new).and_return(request)
+      end
+
+      it 'raises RequestTimeoutError' do
+        expect { described_class.call(payment: payment) }.to raise_error Afterpay::RequestTimeoutError
+      end
+    end
   end
 end
