@@ -11,6 +11,8 @@ module Afterpay
     class Base < Callable
       def call
         ::Afterpay::ErrorHandler.inspect(response)
+      rescue ::Faraday::TimeoutError => e
+        raise RequestTimeoutError.new(e.response_status), e.message
       end
 
       private
