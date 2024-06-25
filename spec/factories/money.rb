@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :money, class: Afterpay::Components::Money do
-    amount   { Faker::Number.decimal(2, 2) }
+    amount   { Faker::Number.decimal(l_digits: 2, r_digits: 2) }
     currency { Faker::Currency.code }
   end
 end
