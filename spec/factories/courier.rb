@@ -5,7 +5,7 @@ FactoryBot.define do
     priority   { 'STANDARD' }
 
     name       { Faker::Lorem.word }
-    tracking   { Faker::Number.number(10) }
-    shipped_at { Faker::Time.between(DateTime.now - 1, DateTime.now) }
+    tracking   { Faker::Number.number(digits: 10) }
+    shipped_at { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
   end
 end

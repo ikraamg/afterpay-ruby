@@ -25,12 +25,12 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency     'faraday',            '~> 1.0'
   spec.add_runtime_dependency     'faraday_middleware', '~> 1.0'
-  spec.add_runtime_dependency     'hashie',             '~> 4.0'
+  spec.add_runtime_dependency     'hashie',             '>= 4.0'
 
-  spec.add_development_dependency 'bundler',            '~> 2.2.22'
+  spec.add_development_dependency 'bundler',            '>= 2.2.22'
   spec.add_development_dependency 'codecov',            '~> 0.5.2'
   spec.add_development_dependency 'factory_bot',        '~> 4.11.1'
-  spec.add_development_dependency 'faker',              '~> 1.9.1'
+  spec.add_development_dependency 'faker',              '~> 2.22.0'
   spec.add_development_dependency 'rake',               '~> 10.0'
   spec.add_development_dependency 'relaxed-rubocop',    '~> 2.5'
   spec.add_development_dependency 'rspec',              '~> 3.0'
